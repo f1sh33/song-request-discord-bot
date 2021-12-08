@@ -6,6 +6,7 @@ const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_
 
 const db = require('./database/db');
 const Song = require('./database/models/song');
+const Event = require('./database/models/event')
 const Handler = require(`./handlers/handle`);
 
 const all_commands = fs.readdirSync(`./commands`).filter(file => file.endsWith('.js'));
@@ -23,6 +24,8 @@ client.on('ready', () => {
         console.log("Database connected!");
         Song.init(db);
         Song.sync();
+        Event.init(db);
+        Event.sync();
     }).catch(err => console.log(err));
 });
 
@@ -30,7 +33,7 @@ client.on('messageCreate', async (message) => {
     rawMessage = message.content;
     channel = message.channel;
     //Chuyển message cho Handler xử lý
-    Handler.handle(client, message, Song);
+    Handler.handle(client, message, Song, Event);
     
 });
 

@@ -12,7 +12,7 @@ module.exports = class Songs extends Model {
                 type: DataTypes.STRING,
                 primaryKey: true
             },
-            authorId: {type: DataTypes.STRING},
+            authorID: {type: DataTypes.STRING},
             songName: {type: DataTypes.TEXT}
          }, {
              tableName: 'songs',
