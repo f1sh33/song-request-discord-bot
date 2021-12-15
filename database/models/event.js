@@ -7,7 +7,9 @@ module.exports = class Events extends Model {
                 type: DataTypes.STRING,
                 primaryKey: true
             },
-            authorID: {type: DataTypes.STRING}
+            authorID: {type: DataTypes.STRING},
+            phase: {type: DataTypes.INTEGER},
+            queue: {type: DataTypes.INTEGER}
          }, {
              tableName: 'events',
              timestamps: true,
