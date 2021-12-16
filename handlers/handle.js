@@ -22,7 +22,7 @@ module.exports = {
         let isAdmin = false;
         
         //Lệnh cho admin
-        isAdmin = message.member.roles.cache.some(r => (r.name === 'Admin' || r.name === "Admin phụ"));
+        isAdmin = message.member.roles.cache.some(r => (r.name.includes('ADMIN') || r.name.includes('MOD')));
         if (isAdmin){
             //Mở đợt đăng ký, cho phép người dùng sử dụng s-sreg
             if (command_name == "s-openreg"){
