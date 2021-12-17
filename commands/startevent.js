@@ -2,7 +2,7 @@ const { MessageEmbed } = require('discord.js');
 require('dotenv').config();
 
 module.exports = {
-    name: 's-startevent',
+    name: 'startevent',
     description: 'Bắt đầu hát hò! (Only for admins)!',
     async execute(message, Event, Song){
         let all_event = await Event.findAll();

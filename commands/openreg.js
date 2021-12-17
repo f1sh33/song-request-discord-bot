@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 module.exports = {
-    name: 's-openreg',
+    name: 'openreg',
     description: 'Mở đợt đăng ký (Only for admins)',
     async execute(message, Event){
         let all_event = await Event.findAll();
@@ -16,7 +16,7 @@ module.exports = {
                 queue: 0
             })
             .then(() => {
-                message.channel.send("Đợt đăng ký event hát hò đã được mở bởi <@" + message.author.id + ">. Hãy đăng ký bài hát bằng cú pháp `" + process.env.PREFIX + "s-sreg + <Tên bài hát>`!");
+                message.channel.send("Đợt đăng ký event hát hò đã được mở bởi <@" + message.author.id + ">. Hãy đăng ký bài hát bằng cú pháp `" + process.env.PREFIX + "sreg + <Tên bài hát>`!");
             })
             .catch(err => {
                 console.log(err);

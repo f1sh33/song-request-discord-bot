@@ -2,7 +2,7 @@ const { MessageEmbed } = require('discord.js');
 require('dotenv').config();
 
 module.exports = {
-    name: 's-closereg',
+    name: 'closereg',
     description: 'Đóng đợt đăng ký. (Only for admins)',
     async execute(client,message, Event, Song){
         let all_event = await Event.findAll();
