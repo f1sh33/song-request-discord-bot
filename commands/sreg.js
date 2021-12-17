@@ -1,5 +1,5 @@
 module.exports = {
-    name: 's-sreg',
+    name: 'sreg',
     description: 'Đăng ký bài hát.',
     async execute(message, songname, Song, Event){
         let all_event = await Event.findAll();

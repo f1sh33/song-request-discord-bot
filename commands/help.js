@@ -2,7 +2,7 @@ const { MessageEmbed } = require('discord.js');
 require('dotenv').config();
 
 module.exports = {
-    name: 's-help',
+    name: 'help',
     description: 'Tất cả các lệnh',
     execute(message, client){
         const embedMessage = new MessageEmbed()

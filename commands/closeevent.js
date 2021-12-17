@@ -1,5 +1,5 @@
 module.exports = {
-    name: 's-closeevent',
+    name: 'closeevent',
     description: 'Kết thúc event. (Only for admins)',
     async execute(message, Song, Event){
         let all_event = await Event.findAll();

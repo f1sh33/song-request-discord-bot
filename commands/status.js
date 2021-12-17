@@ -1,5 +1,5 @@
 module.exports = {
-    name: 's-status',
+    name: 'status',
     description: 'Trạng thái.',
     async execute(message,Event, Song){
         let all_song = await Song.findAll();

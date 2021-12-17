@@ -24,38 +24,38 @@ module.exports = {
         //Lệnh cho admin
         isAdmin = message.member.roles.cache.some(r => (r.name.includes('ADMIN') || r.name.includes('MOD')));
         if (isAdmin){
-            //Mở đợt đăng ký, cho phép người dùng sử dụng s-sreg
-            if (command_name == "s-openreg"){
+            //Mở đợt đăng ký, cho phép người dùng sử dụng sreg
+            if (command_name == "openreg"){
                 command.execute(message, Event);
                 return;
             }
             //Đóng đợt đăng ký, spam danh sách vào kênh riêng, chờ admin bắt đầu mở đợt hát
-            else if (command_name == "s-closereg"){
+            else if (command_name == "closereg"){
                 command.execute(client, message, Event, Song);
                 return;
             }
-            //Mở đợt hát, dừng spam bot, bắt đầu được dùng s-next
-            else if (command_name == "s-startevent"){
+            //Mở đợt hát, dừng spam bot, bắt đầu được dùng next
+            else if (command_name == "startevent"){
                 command.execute(message, Event, Song);
                 return;
             }
             //Đóng đợt hát, dọn sạch database
-            else if (command_name == "s-closeevent"){
+            else if (command_name == "closeevent"){
                 command.execute(message, Song, Event);
                 return;
             }
-            //Bot thông báo bài kế tiếp, người chơi vote, admin sử dụng s-next để confirm
-            else if (command_name == "s-next"){
+            //Bot thông báo bài kế tiếp, người chơi vote, admin sử dụng next để confirm
+            else if (command_name == "next"){
                 command.execute(message, Event, Song);
                 return;
             }
             //Bot báo lại danh sách bài hát đã đăng ký
-            else if (command_name == "s-listall"){
+            else if (command_name == "listall"){
                 command.execute(message, Song);
                 return;
             }
             //Báo lại status của bot gồm có event nào đang diễn ra không, có mấy bài trong danh sách, có được đăng ký thêm bài không
-            else if (command_name == "s-status"){
+            else if (command_name == "status"){
                 command.execute(message, Event, Song);
                 return;
             } 
@@ -63,14 +63,14 @@ module.exports = {
 
         //Lệnh cho mọi người
         //Đăng ký bài hát
-        if (command_name == "s-sreg"){
+        if (command_name == "sreg"){
             if (args[1]){
                 command.execute(message, args[1], Song, Event);
                 return;
             }
         }
         //Cách dùng các lệnh
-        else if (command_name == "s-help"){
+        else if (command_name == "help"){
             command.execute(message, client);
             return;
         }

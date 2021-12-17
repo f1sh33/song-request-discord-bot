@@ -2,7 +2,7 @@ const { MessageEmbed } = require('discord.js');
 require('dotenv').config();
 
 module.exports =  {
-    name: 's-listall',
+    name: 'listall',
     description: 'Liệt các bài hát trong danh sách.',
     async execute(message, Song){
         let all_song = await Song.findAll();

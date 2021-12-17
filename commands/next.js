@@ -1,5 +1,5 @@
 module.exports = {
-    name: 's-next',
+    name: 'next',
     description: 'Thông báo bài tiếp theo vào vote.',
     async execute(message, Event, Song){
         let all_event = await Event.findAll();
